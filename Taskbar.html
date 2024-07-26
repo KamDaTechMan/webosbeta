@@ -1,0 +1,102 @@
+<!-- Taskbar HTML -->
+<div class="taskbar">
+    <div class="taskbar-inner">
+    <div class="taskbar-apps">
+    <div class="taskbar-app">
+    <img src="app1-logo.png" alt="App 1 Logo">
+    <span>App 1</span>
+    </div>
+    <div class="taskbar-app">
+    <img src="app2-logo.png" alt="App 2 Logo">
+    <span>App 2</span>
+    </div>
+    <!-- Add more apps here -->
+    </div>
+    <div class="taskbar-pinned-apps">
+    <div class="taskbar-pinned-app">
+    <img src="pinned-app1-logo.png" alt="Pinned App 1 Logo">
+    <span>Pinned App 1</span>
+    </div>
+    <div class="taskbar-pinned-app">
+    <img src="pinned-app2-logo.png" alt="Pinned App 2 Logo">
+    <span>Pinned App 2</span>
+    </div>
+    <!-- Add more pinned apps here -->
+    </div>
+    </div>
+    </div>
+    
+    <!-- Taskbar CSS -->
+    .taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    }
+    
+    .taskbar-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    }
+    
+    .taskbar-apps {
+    display: flex;
+    flex-direction: row;
+    }
+    
+    .taskbar-app {
+    margin-right: 10px;
+    }
+    
+    .taskbar-app img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    }
+    
+    .taskbar-pinned-apps {
+    display: flex;
+    flex-direction: row;
+    }
+    
+    .taskbar-pinned-app {
+    margin-right: 10px;
+    }
+    
+    .taskbar-pinned-app img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    }
+    
+    <!-- JavaScript code to add functionality to the taskbar -->
+    <script>
+    // Add event listeners to the taskbar apps and pinned apps
+    document.addEventListener("DOMContentLoaded", function() {
+    const taskbarApps = document.querySelectorAll(".taskbar-app");
+    const taskbarPinnedApps = document.querySelectorAll(".taskbar-pinned-app");
+    
+    taskbarApps.forEach((app) => {
+    app.addEventListener("click", function() {
+    // Handle app click event here
+    console.log(`App ${app.querySelector("span").textContent} clicked!`);
+    });
+    });
+    
+    taskbarPinnedApps.forEach((pinnedApp) => {
+    pinnedApp.addEventListener("click", function() {
+    // Handle pinned app click event here
+    console.log(`Pinned App ${pinnedApp.querySelector("span").textContent} clicked!`);
+    });
+    });
+    });
+    </script>
+    
